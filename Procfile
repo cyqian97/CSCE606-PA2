@@ -1,2 +1,2 @@
-release: heroku run rails db:migrate
-release: heroku run rails db:seed
+release: rails db:migrate
+release: rails db:seed

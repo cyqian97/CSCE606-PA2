@@ -1,1 +1,1 @@
-release: rails db:reset && rails db:migrate && rails db:seed
+release: rails db:reset DISABLE_DATABASE_ENVIRONMENT_CHECK=1 && rails db:migrate && rails db:seed

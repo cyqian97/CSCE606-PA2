@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+ .sortable th {
+    cursor: pointer;
+  }
+  
+  .sortable th:after {
+    content: '';
+    float: right;
+  }
+  
+  .sortable th.asc:after {
+    content: '▲';
+  }
+  
+  .sortable th.desc:after {
+    content: '▼';
+  }
+  

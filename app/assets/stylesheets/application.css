@@ -30,3 +30,7 @@
     content: '▼';
   }
   
+  .highlight {
+    background-color: #f0f0f0; /* Example highlight color */
+    font-weight: bold;
+  }

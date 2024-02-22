@@ -6,18 +6,18 @@
 <table class="sortable">
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Rating</th>
-      <th>Release Date</th>
+      <th class="<%= 'highlight' if session[:sort] == 'title' %>"><%= link_to "Title", movies_path(sort: 'title')%> </th>
+      <th class="<%= 'highlight' if session[:sort] == 'rating' %>"><%= link_to "Rating", movies_path(sort: 'rating')%> </th>
+      <th class="<%= 'highlight' if session[:sort] == 'release_date' %>"><%= link_to "Release Date", movies_path(sort: 'release_date')%> </th>
       <th></th> <!-- Placeholder for the 'Show' link -->
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.rating %></td>
-        <td><%= movie.release_date %></td>
+      <td class="<%= 'highlight' if session[:sort] == 'title' %>"><%= movie.title %></td>
+      <td class="<%= 'highlight' if session[:sort] == 'rating' %>"><%= movie.rating %></td>
+      <td class="<%= 'highlight' if session[:sort] == 'release_date' %>"><%= movie.release_date %></td>
         <td><%= link_to "Show this movie", movie %></td>
       </tr>
     <% end %>

@@ -1,4 +1,3 @@
-<%= javascript_tag 'table_sort' %>
 <p style="color: green"><%= notice %></p>
 
 <h1>Movies</h1>
@@ -6,19 +5,31 @@
 <table class="sortable">
   <thead>
     <tr>
-      <th class="<%= 'highlight' if session[:sort] == 'title' %>"><%= link_to "Title", movies_path(sort: 'title')%> </th>
-      <th class="<%= 'highlight' if session[:sort] == 'rating' %>"><%= link_to "Rating", movies_path(sort: 'rating')%> </th>
-      <th class="<%= 'highlight' if session[:sort] == 'release_date' %>"><%= link_to "Release Date", movies_path(sort: 'release_date')%> </th>
+      <th class="<%= "asc" if session[:sort_key] == "title" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "title" && session[:sort_order] == :desc %>">
+                <%= link_to "Title", movies_path(sort: "title") %> </th>
+      <th class="<%= "asc" if session[:sort_key] == "rating" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "rating" && session[:sort_order] == :desc %>">
+                <%= link_to "Rating", movies_path(sort: "rating") %> </th>
+      <th class="<%= "asc" if session[:sort_key] == "release_date" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "release_date" && session[:sort_order] == :desc %>">
+                <%= link_to "Release Date", movies_path(sort: "release_date") %> </th>
       <th></th> <!-- Placeholder for the 'Show' link -->
     </tr>
   </thead>
   <tbody>
     <% @movies.each do |movie| %>
       <tr>
-      <td class="<%= 'highlight' if session[:sort] == 'title' %>"><%= movie.title %></td>
-      <td class="<%= 'highlight' if session[:sort] == 'rating' %>"><%= movie.rating %></td>
-      <td class="<%= 'highlight' if session[:sort] == 'release_date' %>"><%= movie.release_date %></td>
-        <td><%= link_to "Show this movie", movie %></td>
+      <td class="<%= "asc" if session[:sort_key] == "title" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "title" && session[:sort_order] == :desc %>">
+                <%= movie.title %></td>
+      <td class="<%= "asc" if session[:sort_key] == "rating" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "rating" && session[:sort_order] == :desc %>">
+                <%= movie.rating %></td>
+      <td class="<%= "asc" if session[:sort_key] == "release_date" && session[:sort_order] == :asc %>
+                <%= "desc"if session[:sort_key] == "release_date" && session[:sort_order] == :desc %>">
+                <%= movie.release_date %></td>
+      <td><%= link_to "Show this movie", movie %></td>
       </tr>
     <% end %>
   </tbody>

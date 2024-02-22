@@ -23,14 +23,55 @@
   }
   
   .sortable th.asc:after {
+    position: relative;
+    top: -15px;
     content: '▲';
   }
   
   .sortable th.desc:after {
+    position: relative;
+    top: -15px;
     content: '▼';
   }
   
-  .highlight {
-    background-color: #f0f0f0; /* Example highlight color */
+  .asc {
+    background-color: #fff0f0; /* Example highlight color */
     font-weight: bold;
   }
+  
+  .desc {
+    background-color: #f0f0ff; /* Example highlight color */
+    font-weight: bold;
+  }
+  
+  table.sortable th, table.sortable td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  table.sortable {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table.sortable, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  .sortable th {
+    height: 50px; /* Adjust the height as needed */
+    /* line-height: 50px; This helps vertically center the text inside the cell */
+  }
+
+  .sortable th a {
+    display: block;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: 35px; /* Change from fixed height to auto */
+    padding: 15px 0; /* Adjust top and bottom padding as needed */
+    color: inherit;
+    text-decoration: none;
+    box-sizing: border-box;
+  }
+  
+  

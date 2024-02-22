@@ -1,4 +1,3 @@
 {
-    "rufo.exe": "/usr/local/bin/rufo",  // can be an absolute path
-    "rufo.useBundler": false,
-  }
+  "rufo.useBundler": false,
+}
